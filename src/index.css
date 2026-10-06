@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink-950 text-cream-100 font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    @apply bg-gold-400/30 text-cream-50;
+  }
+}
+
+@layer components {
+  .font-display {
+    @apply font-serif;
+  }
+
+  .gold-rule {
+    @apply h-px w-16 bg-gradient-to-r from-transparent via-gold-400 to-transparent;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-300 to-gold-500 px-8 py-3.5 text-sm font-medium uppercase tracking-widest text-ink-950 transition-all duration-500 hover:from-gold-200 hover:to-gold-400 hover:shadow-[0_0_40px_-8px_rgba(212,162,58,0.6)] active:scale-[0.98];
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-gold-400/40 px-8 py-3.5 text-sm font-medium uppercase tracking-widest text-gold-200 transition-all duration-500 hover:border-gold-300 hover:text-gold-100 hover:bg-gold-400/5 active:scale-[0.98];
+  }
+
+  .section-label {
+    @apply flex items-center gap-4 text-xs font-medium uppercase tracking-widest text-gold-300;
+  }
+
+  .dish-card {
+    @apply relative overflow-hidden rounded-2xl border border-gold-400/10 bg-ink-900/60 transition-all duration-700 hover:border-gold-400/30;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .text-shadow-lux {
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 0.6);
+  }
+  .bg-grain {
+    background-image: radial-gradient(rgba(212,162,58,0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+}
